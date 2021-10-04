@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Form geek</title>
+</head>
+
+<body>
+    <header class="shadow bg-dark text-white">
+        <div class="header-container d-flex justify-content-center p-2">
+            <div class="align-selft-center h2">
+                Sistemas de parqueadero Geek
+            </div>
+        </div>
+    </header>
+
+    <div class="form-container mt-5">
+        <form class="w-50 mx-auto" onsubmit="functionSubmit(event)" id="form">
+            <div class="form-group py-2">
+                <label for="propietario"><strong>Propietario del vihículo</strong></label>
+                <input 
+                    class="form-control" 
+                    type="text" 
+                    name="propietario" 
+                    id="propietario" 
+                    placeholder="Propietario"
+                    
+                    required>
+            </div>
+
+            <div class="form-group py-2">
+                <label for="modelo"><strong>Módelo del vihículo</strong></label>
+                <input 
+                    class="form-control" 
+                    type="text" 
+                    name="modelo" 
+                    id="modelo" 
+                    placeholder="Módelo" 
+                    required>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <label for="placa"><strong>Placa</strong></label>
+                    <input 
+                        class="form-control" 
+                        type="" 
+                        name="placa" 
+                        id="placa" 
+                        placeholder="NNN-##N" 
+                        required>
+                </div>
+                <div class="col-6">
+                    <label for="tipo"><strong>Tipo de vehículo</strong></label>
+                    <input class="form-control" type="" name="tipo" id="tipo" required list="datalistTipo" autocomplete="off">
+                    <datalist id="datalistTipo">
+                        <option value="Moto"></option>
+                        <option value="Carro"></option>
+                    </datalist>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <label for="fecha"><strong>Fecha de entrada</strong></label>
+                        <input 
+                            class="form-control" 
+                            type="date" 
+                            name="fecha" 
+                            id="fecha" 
+                            required>
+                    </div>
+                    <div class="col-4">
+                        <label for="hora"><strong>Hora</strong></label>
+                        <input 
+                            class="form-control" 
+                            type="time" 
+                            name="hora" 
+                            id="hora" 
+                            required>
+                    </div>
+                    <div class="col-4">
+                        <label for="cantidad"><strong>Catidad de horas</strong></label>
+                        <input 
+                            class="form-control" 
+                            type="number" 
+                            name="cantidad" 
+                            id="cantidad" 
+                            required>
+                    </div>
+                </div>
+
+                <div class="row" id="Resultado">
+                    <div class="col-4">
+                        <label for="valor"><strong>Valor inicial</strong></label>
+                        <input 
+                            class="form-control" 
+                            type="number" 
+                            name="valor" 
+                            id="valor"
+                            disabled 
+                        >
+                    </div>
+                    <div class="col-4">
+                        <label for="descuento"><strong>Descuento</strong></label>
+                        <input 
+                            class="form-control" 
+                            type="number" 
+                            name="descuento" 
+                            id="descuento" 
+                            disabled
+                            >
+                    </div>
+                    <div class="col-4">
+                        <label for="total"><strong>Total</strong></label>
+                        <input 
+                            class="form-control" 
+                            type="number" 
+                            name="total" 
+                            id="total" 
+                            disabled
+                           >
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-block container text-center mt-4">
+                <button 
+                class="btn btn-primary" 
+                type="button submit"
+                onclick="Calcular()"
+                >
+
+                Calcular
+            </button>
+                <button 
+                    class="btn btn-primary" 
+                    type="button"
+                    onclick="window.print()">
+                    Imprimir
+                </button>
+              </div>
+        </form>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="./script/index.js"></script>
+</body>
+
+</html>
